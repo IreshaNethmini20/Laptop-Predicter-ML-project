@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Laptop Prediction Form</title>
+</head>
+<body>
+    <div> 
+    <form action="/" method="POST">
+        <h1>Laptop Prediction Form</h1>
+
+        <!-- Ram -->
+        <div class="form-group">
+            <label for="ram">Ram (GB)</label>
+            <input type="number" id="ram" name="Ram" placeholder="Enter RAM size" required>
+        </div>
+
+        <!-- Weight -->
+        <div class="form-group">
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" name="Weight" step="0.01" placeholder="Enter weight" required>
+        </div>
+
+        <!-- Touchscreen -->
+        <div class="form-group">
+            <label>Touchscreen</label>
+            <div class="checkbox-group">
+                <label><input type="radio" name="Touchscreen" value="True" required> Yes</label>
+                <label><input type="radio" name="Touchscreen" value="False" required> No</label>
+            </div>
+        </div>
+
+        <!-- IPS -->
+        <div class="form-group">
+            <label>IPS</label>
+            <div class="checkbox-group">
+                <label><input type="radio" name="Ips" value="True" required> Yes</label>
+                <label><input type="radio" name="Ips" value="False" required> No</label>
+            </div>
+        </div>
+
+        <!-- Company (Dropdown) -->
+        <div class="form-group">
+            <label for="company">Company</label>
+            <select id="company" name="Company" required>
+                <option value="Select">Select</option>
+                <option value="Acer">Acer</option>
+                <option value="Apple">Apple</option>
+                <option value="Asus">Asus</option>
+                <option value="Dell">Dell</option>
+                <option value="HP">HP</option>
+                <option value="Lenovo">Lenovo</option>
+                <option value="MSI">MSI</option>
+                <option value="Other">Other</option>
+                <option value="Toshiba">Toshiba</option>
+            </select>
+        </div>
+
+        <!-- Type Name (Dropdown) -->
+        <div class="form-group">
+            <label for="type-name">Type Name</label>
+            <select id="type-name" name="TypeName" required>
+                <option value="Select">Select</option>
+                <option value="2 in 1 Convertible">2 in 1 Convertible</option>
+                <option value="Gaming">Gaming</option>
+                <option value="Netbook">Netbook</option>
+                <option value="Notebook">Notebook</option>
+                <option value="Ultrabook">Ultrabook</option>
+                <option value="Workstation">Workstation</option>
+            </select>
+        </div>
+
+        <!-- Operating System (Dropdown) -->
+        <div class="form-group">
+            <label for="operating-system">Operating System</label>
+            <select id="operating-system" name="OpSys" required>
+                <option value="Select">Select</option>
+                <option value="Linux">Linux</option>
+                <option value="Mac">Mac</option>
+                <option value="Windows">Windows</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <!-- CPU Name (Dropdown) -->
+        <div class="form-group">
+            <label for="cpu-name">CPU Name</label>
+            <select id="cpu-name" name="cpu_name" required>
+                <option value="Select">Select</option>
+                <option value="AMD">AMD</option>
+                <option value="Intel Core i3">Intel Core i3</option>
+                <option value="Intel Core i5">Intel Core i5</option>
+                <option value="Intel Core i7">Intel Core i7</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <!-- GPU Name (Dropdown) -->
+        <div class="form-group">
+            <label for="gpu-name">GPU Name</label>
+            <select id="gpu-name" name="gpu_name" required>
+                <option value="Select">Select</option>
+                <option value="AMD">AMD</option>
+                <option value="Intel">Intel</option>
+                <option value="Nvidia">Nvidia</option>
+            </select>
+        </div>
+
+        <button type="submit">Predict Laptop</button>
+
+        <div class="result">
+          {% if pred != 0 %}
+          <p>
+            Estimated Price : LKR {{ pred }}
+        </p>
+        {% endif %}
+    
+        </div>
+    </form>
+
+    
+</div>
+    
+</body>
+</html>
